@@ -1,0 +1,376 @@
+<html>
+    <head>
+
+        <title>ARCSolutions - Our References</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"></link>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+
+        <link rel="stylesheet" href="/style/style-all.css"></link>
+
+        <link rel="stylesheet" href="/style/style-r.css"></link>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="/scripts/java-all.js">
+        </script>
+
+        <script type="text/javascript" src="/scripts/java-r.js">
+        </script>
+
+        <script src="https://maps.google.com/maps/api/js?key=AIzaSyBwE3STW0hmZZXa50zTOfuDQrgNOlJRJVE" type="text/javascript">
+        </script>
+        
+    </head>
+
+    <body>
+
+        <!-- Header same on every page -->
+        
+        <div class="jumbotron">
+            <div class="container">
+                <h1>ARCSolutions</h1>
+                <p>your office partner</p>
+            </div>
+        </div>
+
+        <div class="navbar" id="navbar1">
+            <div class="container">
+                <a href="javascript:void(0);" id="menu">Menu</a>
+                <a href="https://arcsapp.mybluemix.net/aboutus">About Us</a>
+                <a class="active" href="https://arcsapp.mybluemix.net/references">Our Customers</a>
+                <a href="https://arcsapp.mybluemix.net/process">A Project Process</a>
+                <a href="https://arcsapp.mybluemix.net/convinced">Become a Customer</a>
+                <a href="javascript:void(0);" class="icon" id="iSmall" onclick="respNavbar()">&#9776;</a>
+            </div>
+        </div>
+
+        <!-- End of Header -->
+
+        <!-- Start of Sidenav Social Media -->
+
+        <div id="SMsidenav" class="sidenav">
+            <a href="https://www.facebook.com/" id="F">
+                <table class="table-sidenav" style="width:100%">
+                    <tr>
+                        <th style="width:90%">Facebook</th>
+                        <th style="width:10%"><i class="fa fa-facebook"></i></th>
+                    </tr>
+                </table>
+            </a>
+            <a href="https://twitter.com/" id="T">
+                <table class="table-sidenav" style="width:100%">
+                    <tr>
+                        <th style="width:90%">Twitter</th>
+                        <th style="width:10%"><i class="fa fa-twitter"></i></th> 
+                    </tr>
+                </table>
+            </a>
+            <a href="https://www.linkedin.com/" id="L">
+                <table class="table-sidenav" style="width:100%">
+                    <tr>
+                        <th style="width:90%">LinkedIn</th>
+                        <th style="width:10%"><i class="fa fa-linkedin"></i></th>
+                    </tr>
+                </table>
+            </a>
+            <a href="https://www.xing.com/" id="X">
+                <table class="table-sidenav" style="width:100%">
+                    <tr>
+                        <th style="width:90%">Xing</th>
+                        <th style="width:10%"><i class="fa fa-xing"></i></th> 
+                    </tr>
+                </table>
+            </a>
+        </div>
+
+        <!-- End of Sidenav Social Media -->
+
+        <!-- Start of Scroll Up Button -->
+
+        <button onclick="scrollToTop()" id="ScrollUpButton" title="Go to top">&#x25B2;</button>
+
+        <!-- End of Scroll Up Button -->
+
+        <!-- Start of Explanation -->
+
+        <div class="container text-center" id="firstDiv">
+            <div>
+                <h1>Who? What? Where?</h1>
+            </div>
+            <div>
+                <p>
+                    Of course, we are conscious about the fact, that everyone can say they offer the best service, especially in our sector. <br>
+                    Because of that, we would like to show you our work, some of our customers, and how they rated us.
+                </p>
+            </div>
+        </div>
+
+        <!-- End of Explanation -->
+
+        <hr>
+
+        <!-- Start of Map -->
+
+        <div class="container text-center">
+            <div>
+                <h1>Our Action Radius</h1>
+                <h3>- The World -</h3>
+            </div>
+            <div class="card">
+                <div id="map" style="width: 100%; height: 450px;">
+                    <script type="text/javascript" src="/scripts/java-r.js"></script>
+                </div>
+                <div class="container" id="underMap">
+                    <p>
+                        Because of the fact, that our work happens digitally to 99%, we can easily work for everybody all around the globe. <br>
+                        This map shows, where our customers come from. <br>
+                        You think there is one missing? - Maybe you? <br>
+                        <a href="https://arcsapp.mybluemix.net/convinced">Then become on of our customers!</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- End of Map -->
+
+        <hr>
+
+        <!-- Start of Databank -->
+
+        <div class="container text-center">
+            <div>
+                <h1>Our Projects</h1>
+                <h3>- So Far -</h3>
+            </div>
+            <div>
+                <p>
+                    In the following table we provide you an overview of some of our projects so far. <br>
+                    On the grounds of data protection we can of course only show you the ones the ones we were allowed to list. <br>
+                    You think you can contribute to that list? Feel free to <a href="https://joeschoeler13.github.io/project2/convinced.html">contact</a> us!<br>
+                </p>
+            </div>
+
+            <input type="text" id="searchInput" onkeyup="projectFilter()" placeholder="&#xF002; Search for project categories (e.g. Automatization)" style="font-family:Arial, FontAwesome" />
+
+            <div style="overflow-x:auto;">        
+                <table id="projects">
+                    <thead>
+                        <tr class="header">
+                            <th style="width: 20%">Project name</th>
+                            <th style="width: 15%">Category</th>
+                            <th style="width: 20%">Programs used</th>
+                            <th style="width: 15%">Status</th>
+                            <th style="width: 15%">Customer industry</th>
+                            <th style="width: 15%">Customer location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="listing" onclick="document.getElementById('id01').style.display='block'">
+                            <td class="pn">Thor</th>
+                            <td class="pc">Automatization</th>
+                            <td class="pu">MS Excel, <br>VBA programmatics</th>
+                            <td class="st">ongoing</th>
+                            <td class="ci">Retail</th>
+                            <td class="cl">Germany</th>
+                        </tr>
+                        <tr class="listing" onclick="document.getElementById('id02').style.display='block'">
+                            <td class="pn">Iron Man</th>
+                            <td class="pc">Automatization</th>
+                            <td class="pu">MS Excel, <br>VBA programmatics</th>
+                            <td class="st">finished</th>
+                            <td class="ci">Banking</th>
+                            <td class="cl">Germany</th>
+                        </tr>
+                        <tr class="listing" onclick="document.getElementById('id03').style.display='block'">
+                            <td class="pn">Hulk</th>
+                            <td class="pc">Web-development</th>
+                            <td class="pu">HTML, <br>JS, <br>CSS</th>
+                            <td class="st">ongoing</th>
+                            <td class="ci">Education</th>
+                            <td class="cl">Canada</th>
+                        </tr>
+                        <!-- 
+                        <tr class="listing" onclick="document.getElementById('id04').style.display='block'">
+                            <td class="pn">Zeus</th>
+                            <td class="pc">Dreaming</th>
+                            <td class="pu">JavaScript</th>
+                            <td class="st">Status</th>
+                            <td class="ci">Banking</th>
+                            <td class="cl">Heaven</th>
+                        </tr>
+                        -->
+                    </tbody>                    
+                </table>
+            </div>
+        </div>
+        <!-- End of Databank -->
+
+        <!-- Start of Modal boxes -->
+
+            <!-- Start of Modal 1 -->
+            <div id="id01" class="modal">
+                <div class="modcontent">
+                    <div class="modhead text-center">
+                        <span class="close" onclick="document.getElementById('id01').style.display='none'">&times;</span>
+                        <h1 class="modtitle"><br>Project Thor</h1>
+                        <p class="modsubtitle">started in June 2017 ongoing</p>
+                    </div>
+                    <div class="modbody">
+                        <div class="custinfo text-center">
+                            <p>
+                                rameder. Anhaengerkupplungen und Autoteile GmbH <br>
+                                Retailer for car parts, Germany
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="proinfo text-center">
+                            <p>Automatization of Reporting Tools</p>
+                            <p>
+                                The main part of the job was about the automatization of an already existing reporting tool for daily management reports.
+                                Our service was to analyze the current process of how the reports were produced, to locate efficiency lags and 
+                                to automatize the efficiently structured process of generating the reports via Microft Excel and VBA programmatics. 
+                                The project is ongoing in that we currently execute these reports daily and work on the further development of an even more efficient process.
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="satisf text-center">
+                            <p>Customer Satisfaction</p>
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <!-- End of Modal 1 -->
+
+            <!-- Start of Modal 2 -->
+            <div id="id02" class="modal">
+                <div class="modcontent">
+                    <div class="modhead text-center">
+                        <span class="close" onclick="document.getElementById('id02').style.display='none'">&times;</span>
+                        <h1 class="modtitle"><br>Project Iron Man</h1>
+                        <p class="modsubtitle">August 2016</p>
+                    </div>
+                    <div class="modbody">
+                        <div class="custinfo text-center">
+                            <p>
+                                Concardis GmbH <br>
+                                Payment Service Provider, Germany
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="proinfo text-center">
+                            <p>Design and Developping of Campaign Management</p>
+                            <p>
+                                This was a smaller project, where the job was to create a tool via Microsoft Excel and VBA programmatics, to manage customer data for marketing campaigns.
+                                We developped a tool to be used for analyzing an input of customer data (high scales, 10'000 and more), selecting specific groups of customers, and creating 0- and Test-groups 
+                                to test the success of different marketing campaigns. The project was successfully accomplished after 2 weeks.
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="satisf text-center">
+                            <p>Customer Satisfaction</p>
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <!-- End of Modal 2 -->
+
+            <!-- Start of Modal 3 -->
+            <div id="id03" class="modal">
+                <div class="modcontent">
+                    <div class="modhead text-center">
+                        <span class="close" onclick="document.getElementById('id03').style.display='none'">&times;</span>
+                        <h1 class="modtitle"><br> Project Hulk</h1>
+                        <p class="modsubtitle">started in Oktober 2017 ongoing</p>
+                    </div>
+                    <div class="modbody">
+                        <div class="custinfo text-center">
+                            <p>
+                                University of Victoria <br>
+                                University, Canada
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="proinfo text-center">
+                            <p>Website-Development</p>
+                            <p>
+                                Our job here was/is to develop a website for a new company. This project is still going on and to be accomplished in December.
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="satisf text-center">
+                            <p>Customer Satisfaction</p>
+                            <p>-not yet rated-</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <!-- End of Modal 3 -->
+
+            <!-- Start of Modal Example
+            <div id="id04" class="modal">
+                <div class="modcontent">
+                    <div class="modhead text-center">
+                        <span class="close" onclick="document.getElementById('id04').style.display='none'">&times;</span>
+                        <h1 class="modtitle"><br> Project Zeus</h1>
+                        <p class="modsubtitle">not yet started</p>
+                    </div>
+                    <div class="modbody">
+                        <div class="custinfo text-center">
+                            <p>
+                                This could be your company <br>
+                                in your industry, in your country
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="proinfo text-center">
+                            <p>Your Job</p>
+                            <p>
+                                ... for us. 
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="satisf text-center">
+                            <p>Customer Satisfaction</p>
+                            <p>-not yet rated-</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+                End of Modal Example -->
+
+        <!-- End of Modal boxes -->
+        
+        <!-- Start of Footer -->
+
+        <footer>
+            <div class="footer text-right">
+                &copy; Copyright 2017 ARCSolutions
+            </div>
+        </footer>
+        
+        <!-- End of Footer -->
+
+    </body>
+</html>

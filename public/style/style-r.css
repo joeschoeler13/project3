@@ -1,0 +1,113 @@
+/* START: Map*/
+.card {
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+    z-index: 0;
+}
+
+#underMap {
+    padding: 0 16px;
+}
+/* END: Map*/
+
+
+/* START: Project table*/
+
+#searchInput {
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 12px 12px 12px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+
+#projects {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-family: Arial;
+    text-decoration: none;
+}
+
+.listing {
+    cursor: pointer;
+}
+
+#projects th, #projects td {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+}
+
+#projects tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd; 
+}
+
+#projects tr.header, #projects tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
+}
+
+/*END: Project table*/
+
+
+/*START: Modal box templ*/
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */ 
+    position: fixed; /* Stay in place */
+    z-index: 150; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modcontent {
+    background-color: white;
+    margin: auto;
+    padding: 0 0;
+    width: 50%;
+    box-shadow: 0 10px 20px 0 rgba(20, 20, 20, 0.3);
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modhead {
+    background-color: orange;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.modbody {
+    padding: 10px; 
+}
+
+
+.custinfo, .satisf, .stars {
+    font-weight: bold;
+}
+
+.checked {
+    color: orange;
+}
+
+/*END: Modal box templ*/

@@ -1,0 +1,93 @@
+/*START: Timeline*/
+
+.timeline {
+    margin-top: 10%;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: rgb(210, 210, 210);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  .containertl {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  .left {
+    left: 0;
+  }
+  .right {
+    left: 50%;
+  }
+  
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid rgb(210, 210, 210);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent rgb(210, 210, 210);
+  }
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid rgb(240, 240, 240);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent rgb(240, 240, 240) transparent transparent;
+  }
+  
+  .contentr {
+    padding: 20px 30px;
+    background-color: rgb(240, 240, 240);
+    position: relative;
+  }
+  .contentl {
+    padding: 20px 30px;
+    background-color: rgb(210, 210, 210);
+    position: relative;
+  }
+  
+  @media all and (max-width: 600px) {
+    .timeline::after {
+        left: 10%;
+    }
+    .containertl {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+    .containertl::before {
+      left: 60px;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent rgb(240, 240, 240) transparent transparent;
+    }
+    .contentl {
+      background-color: rgb(240, 240, 240);
+    }
+    .contentr {
+      background-color: rgb(240, 240, 240);
+    }
+    .right {
+      left: 0%;
+    }
+  }
+  /*END: Timeline*/
