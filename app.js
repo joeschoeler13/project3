@@ -90,7 +90,12 @@ function initDBConnection() {
 
 initDBConnection();
 
-app.get('/', routes.index);
+app.get('/aboutus', routes.aboutus);
+app.get('/convinced', routes.convinced);
+app.get('/index', routes.index);
+app.get('/process', routes.process);
+app.get('/references', routes.references);
+app.get('/welcome', routes.welcome);
 
 function createResponseData(id, name, value, attachments) {
 
