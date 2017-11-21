@@ -6,6 +6,8 @@ var defaultItems = [
 
 ];
 
+var item = 0;
+
 function encodeUriAndQuotes(untrustedStr) {
     return encodeURI(String(untrustedStr)).replace(/'/g, '%27').replace(')', '%29');
 }
@@ -36,7 +38,7 @@ function newproject() {
         s_comments: document.getElementById('input-s_comments').value
     };
     item++;
-    alert("The project was added to the database.")
+    alert("The project was added to the database.");
 
     xhrPost(REST_DATA, data, function(item) {
         
