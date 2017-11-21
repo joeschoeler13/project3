@@ -9,6 +9,13 @@ var express = require('express'),
     path = require('path'),
     fs = require('fs');
 
+// Authentication module.
+var auth = require('http-auth');
+var basic = auth.basic({
+	realm: "auth-db",
+	file: __dirname + "/public/data/passwords"
+});
+
 var app = express();
 
 var db;
@@ -39,8 +46,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(methodOverride());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use('/style', express.static(path.join(__dirname, '/views/style')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
 if ('development' == app.get('env')) {
@@ -92,7 +99,6 @@ initDBConnection();
 
 app.get('/aboutus', routes.aboutus);
 app.get('/convinced', routes.convinced);
-app.get('/index', routes.index);
 app.get('/process', routes.process);
 app.get('/references', routes.references);
 app.get('/welcome', routes.welcome);
@@ -433,6 +439,10 @@ app.get('/api/favorites', function(request, response) {
     });
 
 });
+
+// http basic auth only applicable to the database page
+app.use(auth.connect(basic));
+app.get('/index', routes.index);
 
 
 http.createServer(app).listen(app.get('port'), '0.0.0.0', function() {
