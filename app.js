@@ -9,6 +9,13 @@ var express = require('express'),
     path = require('path'),
     fs = require('fs');
 
+// Authentication module.
+var auth = require('http-auth');
+var basic = auth.basic({
+	realm: "auth-db",
+	file: __dirname + "/public/data/passwords"
+});
+
 var app = express();
 
 var db;
@@ -92,7 +99,7 @@ function initDBConnection() {
     console.log("db:"+db);
     console.log(db);
     
-    cloudant.db.create(dbCredentials2.dbName, function(err, res) {
+    cloudant.db.create(dbCredentials.dbName, function(err, res) {
         if (err) {
             console.log('Could not create new db: ' + dbCredentials.dbName + ', it might already exist.');
         }
@@ -114,39 +121,42 @@ function sanitizeInput(str) {
     return String(str).replace(/&(?!amp;|lt;|gt;)/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
+
+app.use(auth.connect(basic));
+app.get('/arcsdb', routes.arcsdb);
+
 //animals routes
 
 app.post('/api/arcs_projects_db', function(request, response) {
-    //did not know how to change this route, so I left it as cars, since changing it to api/animals threw up many errors
     
-        console.log("Adding a project...");
+    console.log("Adding a project...");
 
-        var id;
-        var name = request.body.name;
-        var valueAnimal = request.body.valueAnimal;
-        var valueLegs = request.body.valueLegs;
+    var id;
+    var name = request.body.name;
+    var valueAnimal = request.body.valueAnimal;
+    var valueLegs = request.body.valueLegs;
 
-        console.log(request.body.name);
+    console.log(request.body.name);
+    console.log(request.user);
 
-        if (id === undefined) {
-            // Generated random id
-            id = '';
-        }
+    if (id === undefined) {
+        // Generated random id
+        id = '';
+    }
     
-        db.insert({
-            name: name,
-            valueAnimal: valueAnimal,
-            valueLegs: valueLegs,
-                }, id, function(err, doc) {
-            if (err) {
-                console.log(err);
-                response.sendStatus(500);
-            } else
-                response.sendStatus(200);
+    db.insert({
+        name: name,
+        valueAnimal: valueAnimal,
+        valueLegs: valueLegs,
+            }, id, function(err, doc) {
+        if (err) {
+            console.log(err);
+            response.sendStatus(500);
+        } else
+            response.sendStatus(200);
             response.end();
-        });
-    
-    });
+    });    
+});
 
 http.createServer(app).listen(app.get('port'), '0.0.0.0', function() {
     console.log('Express server listening on port ' + app.get('port'));
