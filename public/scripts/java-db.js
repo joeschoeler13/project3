@@ -1,4 +1,4 @@
-// index.js
+// js file for database page
 
 var REST_DATA = 'api/arcs_projects_db';
 var KEY_ENTER = 13;
@@ -11,5 +11,16 @@ function encodeUriAndQuotes(untrustedStr) {
 }
 
 function newproject() {
-    console.log("Adding a project...");
+    var data = {
+        name: "project",
+        value: document.getElementById('input').value
+    };
+    item++;
+    alert("The project was added to the database.")
+
+    xhrPost(REST_DATA, data, function(item) {
+        
+    }, function(err) {
+        console.error(err);
+    });
 }
