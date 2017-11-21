@@ -26,3 +26,7 @@ exports.references = function(req, res){
 exports.welcome = function(req, res){
   res.render('welcome.html', { title: 'ARCSolutions - Welcome' });
 };
+
+exports.arcsdb = function(req, res){
+  res.render('arcsdb.html', { title: 'Projects Database Backend' });
+};
