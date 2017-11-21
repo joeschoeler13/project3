@@ -133,8 +133,27 @@ app.post('/api/arcs_projects_db', function(request, response) {
 
     var id;
     var name = request.body.name;
-    var valueAnimal = request.body.valueAnimal;
-    var valueLegs = request.body.valueLegs;
+    //project information
+    var p_name = request.body.p_name;
+    var p_category = request.body.p_category;
+    var p_start = request.body.p_start;
+    var p_end = request.body.p_end;
+    //customer information
+    var c_name = request.body.c_name;
+    var c_industry = request.body.c_industry;
+    var c_adr1 = request.body.c_adr1;
+    var c_adr2 = request.body.c_adr2;
+    var c_city = request.body.c_city;
+    var c_zip = request.body.input-c_zip;
+    var c_state = request.body.c_state;
+    var c_country = request.body.c_country;
+    var c_lat = request.body.c_lat;
+    var c_lng = request.body.c_lng;
+    //utilities (used programs) information
+    var u_all = request.body.u_all;
+    //(customer) satisfaction information and additional comments
+    var s_stars = request.body.s_stars;
+    var s_comments = request.body.s_comments;
 
     console.log(request.body.name);
     console.log(request.user);
@@ -146,15 +165,34 @@ app.post('/api/arcs_projects_db', function(request, response) {
     
     db.insert({
         name: name,
-        valueAnimal: valueAnimal,
-        valueLegs: valueLegs,
-            }, id, function(err, doc) {
-        if (err) {
-            console.log(err);
-            response.sendStatus(500);
-        } else
-            response.sendStatus(200);
-            response.end();
+        //project information
+        p_name: p_name,
+        p_category: p_category,
+        p_start: p_start,
+        p_end: p_end,
+        //customer information
+        c_name: c_name,
+        c_industry: c_industry,
+        c_adr1: c_adr1,
+        c_adr2: c_adr2,
+        c_city: c_city,
+        c_zip: input-c_zip,
+        c_state: c_state,
+        c_country: c_country,
+        c_lat: c_lat,
+        c_lng: c_lng,
+        //utilities (used programs) information
+        u_all: u_all,
+        //(customer) satisfaction information and additional comments
+        s_stars: s_stars,
+        s_comments: s_comments,
+    }, id, function(err, doc) {
+    if (err) {
+        console.log(err);
+        response.sendStatus(500);
+    } else
+        response.sendStatus(200);
+        response.end();
     });    
 });
 
