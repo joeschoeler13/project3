@@ -102,6 +102,7 @@ app.get('/convinced', routes.convinced);
 app.get('/process', routes.process);
 app.get('/references', routes.references);
 app.get('/welcome', routes.welcome);
+app.get('/index', routes.index);
 
 function createResponseData(id, name, value, attachments) {
 
@@ -442,7 +443,7 @@ app.get('/api/favorites', function(request, response) {
 
 // http basic auth only applicable to the database page
 app.use(auth.connect(basic));
-app.get('/index', routes.index);
+app.get('/arcsdb', routes.arcsdb);
 
 
 http.createServer(app).listen(app.get('port'), '0.0.0.0', function() {
