@@ -28,5 +28,6 @@ exports.welcome = function(req, res){
 };
 
 exports.arcsdb = function(req, res){
-  res.render('arcsdb.html', { title: 'Projects Database Backend' });
+  var user = req.user;
+  res.render('arcsdb.html', { u: user, title: 'Projects Database Backend' });
 };
