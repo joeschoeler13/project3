@@ -101,77 +101,114 @@
         <!-- End of Scroll Up Button -->
 
 
-        <!-- Start of Input form for Database -->
-        
-        <div class="container">
-                <fieldset>
-                    <legend>Personal information:</legend>
-
-                    <label for="fname">First Name</label>
-                    <input type="text" id="fname" name="firstname" placeholder="...">
-                            
-                    <label for="lname">Last Name</label>
-                    <input type="text" id="lname" name="lastname" placeholder="...">
-
-                    <label for="tname">Title</label>
-                    <input type="text" id="tname" name="titlename" placeholder="...">
-                </fieldset>
-                <fieldset>
-                    <legend>Your request:</legend>
-
-                    <label for="reason">Reason of contacting</label>
-                    <select id="reason" name="reason">
-                        <option value="project">Request for a project</option>
-                        <option value="carreer">Carreer opportunities</option>
-                        <option value="other">Other kinds of requests</option>
-                    </select>
-                            
-                    <label for="subject">Subject</label>
-                    <textarea id="subject" name="subject" placeholder="Write something..." style="height:200px"></textarea>
-                </fieldset> 
-                <button id="submitform" onclick="submitform()">Submit</button>
-            </div>
-        </div>
-
-        <!-- End of Input form for Database -->        
-
-
         <!-- Start of Explanation -->
 
         <div class="container text-center" id="firstDiv">
             <div>
-                <h1>Add a new project to the Database</h1>
+                <h1>Welcome (PLACEHOLDER NAME)</h1>
             </div>
             <div>
-            <!--Project Information-->
-                <input type="text" id="input-p_name" value="name of project" />
-                <input type="text" id="input-p_category" value="category" />
-                <input type="text" id="input-p_start" value="start date of project" />
-                <input type="text" id="input-p_end" value="end date of project, 'ongoing' if not finished" />
-            <!--Customer Information-->
-                <input type="text" id="input-c_name" value="name of customer" />
-                <input type="text" id="input-c_industry" value="industry" />
-                <input type="text" id="input-c_adr1" value="adress line 1" />
-                <input type="text" id="input-c_adr2" value="adress line 2" />
-                <input type="text" id="input-c_city" value="city" />
-                <input type="text" id="input-c_zip" value="zip code" />
-                <input type="text" id="input-c_state" value="state" />
-                <input type="text" id="input-c_country" value="country" />
-                <input type="text" id="input-c_lat" value="latitude" />
-                <input type="text" id="input-c_lng" value="longitude" />
-            <!--Utilities Information-->
-                <input type="text" id="input-u_all" value="all used utilities" />
-            <!--Satisfaction Information-->
-                <input type="text" id="input-s_stars" value="how satisfied was the customer" />
-                <input type="text" id="input-s_comments" value="all further comments, made by customer" />
-            </div>
-            <div>
-                <button onclick="newproject()">Add a new project</button>
+                <p>Here you can add new projects to our database or edit the existing database of projects.</p>
             </div>
         </div>
         
         <!-- End of Explanation -->
+        
 
+        <hr>
+
+
+        <!-- Start of Input form for Database -->
+
+        <div class="container">
+            <div>
+                <h1 class="text-center">Add a new project to the Database</h1>
+            </div>
+            <div id="inputForm">
+                <fieldset>
+                    <legend>Project Information</legend>
+                    <div class="left">
+                        <label for="fname">Name of the project</label>
+                        <input type="text" id="input-p_name" placeholder="...">
+                    </div>
+                    <div class="right">
+                        <label for="fname">Category of the project</label>
+                        <input type="text" id="input-p_category" placeholder="...">
+                    </div>
+                    <div class="left">
+                        <label for="fname">Start-date of the project</label>
+                        <input type="text" id="input-p_start" placeholder="...">
+                    </div>
+                    <div class="right">
+                        <label for="fname">End-date of the project</label>
+                        <input type="text" id="input-p_end" placeholder="Fill in '(ongoing)' if the project is not finished yet.">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Customer Information</legend>
+                    <div class="left">
+                        <label for="fname">Name of the customer</label>
+                        <input type="text" id="input-c_name" placeholder="...">
+                    </div>
+                    <div class="right">
+                        <label for="fname">Customer's industry</label>
+                        <input type="text" id="input-c_industry" placeholder="...">
+                    </div>
+                    <div class="left">
+                        <label for="fname">Customer: adress line 1</label>
+                        <input type="text" id="input-c_adr1" placeholder="...">
+                    </div>
+                    <div class="right">
+                        <label for="fname">Customer: adress line 2</label>
+                        <input type="text" id="input-c_adr2" placeholder="...">
+                    </div>
+                    <div class="left">
+                        <label for="fname">Customer: city</label>
+                        <input type="text" id="input-c_city" placeholder="...">
+                    </div>
+                    <div class="right">
+                        <label for="fname">Customer: zip-code</label>
+                        <input type="text" id="input-c_zip" placeholder="...">
+                    </div>
+                    <div class="left">
+                        <label for="fname">Customer: state</label>
+                        <input type="text" id="input-c_state" placeholder="...">
+                    </div>
+                    <div class="right">
+                        <label for="fname">Customer: country</label>
+                        <input type="text" id="input-c_country" placeholder="...">
+                    </div>
+                    <div class="left">
+                        <label for="fname">Customer: latitude (<a target="_blank" href="https://www.google.ca/maps/">Google for it!</a>)</label>
+                        <input type="text" id="input-c_lat" placeholder="...">
+                    </div>
+                    <div class="right">
+                        <label for="fname">Customer: longitude</label>
+                        <input type="text" id="input-c_lng" placeholder="...">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Information about used Programs for this project</legend>
+                    <div class="left">
+                        <label for="fname">All used programs</label>
+                        <input type="text" id="input-u_all" placeholder="List separated by ',' !">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Information about Customer Satisfaction</legend>
+                    <div class="left">
+                        <label for="fname">Overall satisfaction of customer</label>
+                        <input type="text" id="input-s_stars" placeholder="Value in percent (0 for low to 100 for high)">
+                    </div>
+                    <div class="right">
+                        <label for="fname">Comments the customer made</label>
+                        <input type="text" id="input-s_comments" placeholder="...">
+                    </div>
+                </fieldset>
+                <button id="submitProject" onclick="newproject()">Add this project to the database</button>
+            </div>
+        </div>
+        <!-- End of Input form for Database -->        
 
         <hr>
 
