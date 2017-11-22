@@ -176,7 +176,7 @@ app.post('/api/arcs_projects_db', function(request, response) {
         c_adr1: c_adr1,
         c_adr2: c_adr2,
         c_city: c_city,
-        c_zip: input-c_zip,
+        c_zip: c_zip,
         c_state: c_state,
         c_country: c_country,
         c_lat: c_lat,

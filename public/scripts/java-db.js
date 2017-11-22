@@ -39,7 +39,7 @@ function newproject() {
     };
     item++;
     alert("The project was added to the database.");
-
+    
     xhrPost(REST_DATA, data, function(item) {
         
     }, function(err) {
