@@ -144,7 +144,7 @@ app.post('/api/arcs_projects_db', function(request, response) {
     var c_adr1 = request.body.c_adr1;
     var c_adr2 = request.body.c_adr2;
     var c_city = request.body.c_city;
-    var c_zip = request.body.input-c_zip;
+    var c_zip = request.body.c_zip;
     var c_state = request.body.c_state;
     var c_country = request.body.c_country;
     var c_lat = request.body.c_lat;
