@@ -20,6 +20,7 @@ function newproject() {
         p_category: document.getElementById('input-p_category').value,
         p_start: document.getElementById('input-p_start').value,
         p_end: document.getElementById('input-p_end').value,
+        p_desc: document.getElementById('input-p_desc').value,
         //customer information
         c_name: document.getElementById('input-c_name').value,
         c_industry: document.getElementById('input-c_industry').value,

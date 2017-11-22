@@ -138,6 +138,7 @@ app.post('/api/arcs_projects_db', function(request, response) {
     var p_category = request.body.p_category;
     var p_start = request.body.p_start;
     var p_end = request.body.p_end;
+    var p_desc = request.body.p_desc;
     //customer information
     var c_name = request.body.c_name;
     var c_industry = request.body.c_industry;
@@ -170,6 +171,7 @@ app.post('/api/arcs_projects_db', function(request, response) {
         p_category: p_category,
         p_start: p_start,
         p_end: p_end,
+        p_desc: p_desc,
         //customer information
         c_name: c_name,
         c_industry: c_industry,
