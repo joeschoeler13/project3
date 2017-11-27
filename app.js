@@ -198,6 +198,73 @@ app.post('/api/arcs_projects_db', function(request, response) {
     });    
 });
 
+
+app.get('/api/arcs_projects_db', function(request, response) {
+        
+    console.log("get projects");
+   
+    var projectList = [];
+    var i = 0;
+    db.list(function(err, body) {
+        if (!err) {
+            var len = body.rows.length;
+            console.log('total # of project -> ' + len);
+            if (len == 0) {
+                // push sample data
+                // save doc
+                var docName = 'simple_doc';
+                var docDesc = 'A simple Document';
+                db.insert({
+                    name: docName,
+                    value: 'A sample Document'
+                }, '', function(err, doc) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log('Document : ' + JSON.stringify(doc));
+                        var responseData = createResponseData(
+                            doc.id,
+                            docName,
+                            docDesc, []);
+                        projectList.push(responseData);
+                        response.write(JSON.stringify(projectList));
+                        console.log(JSON.stringify(projectList));
+                        console.log('ending response...');
+                        response.end();
+                    }
+                    });
+            } else {
+                body.rows.forEach(function(document) {
+                    db2.get(document.id, {
+                        revs_info: true
+                    }, function(err, doc) {
+                        if (!err) {
+                            var responseData = createResponseData(
+                                //
+                                doc._id,
+                                doc.name, // add others later!!
+                                doc.p_name,[]);
+                                //
+                            projectList.push(responseData);
+                            i++;
+                            if (i >= len) {
+                                response.write(JSON.stringify(projectList));
+                                console.log('ending response...');
+                                response.end();
+                            }
+                        } else {
+                            console.log(err);
+                        }
+                    });
+                });
+            }
+        } else {
+            console.log(err);
+        }
+    });        
+});
+
+
 http.createServer(app).listen(app.get('port'), '0.0.0.0', function() {
     console.log('Express server listening on port ' + app.get('port'));
 });
