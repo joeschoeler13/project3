@@ -49,7 +49,7 @@ function newproject() {
 }
 
 
-function addItem(item, isNew) {
+function addItem(item) {
     
     var row = document.createElement('tr');
     row.className = "tableRows";
@@ -57,15 +57,36 @@ function addItem(item, isNew) {
     if (id) {
         row.setAttribute('data-id', id);
     }
-    
-    row.innerHTML = "<td>"+item.p_name+"</td>"+                      
-                    
-                    "<td><span class='deleteBtn' onclick='deleteItem(this)' title='delete me'></span></td>";
+        
+    row.innerHTML = //project information
+                    "<td>"+item.p_name+"</td>" +
+                    "<td>"+item.p_category+"</td>" +
+                    "<td>"+item.p_start+"</td>" +
+                    "<td>"+item.p_end+"</td>" +
+                    "<td>"+item.p_desc+"</td>" +
+                    //customer information
+                    "<td>"+item.c_name+"</td>" +
+                    "<td>"+item.c_industry+"</td>" +
+                    "<td>"+item.c_adr1+"</td>" +
+                    "<td>"+item.c_adr2+"</td>" +
+                    "<td>"+item.c_city+"</td>" +
+                    "<td>"+item.c_zip+"</td>" +
+                    "<td>"+item.c_state+"</td>" +
+                    "<td>"+item.c_country+"</td>" +
+                    "<td>"+item.c_lat+"</td>" +
+                    "<td>"+item.c_lng+"</td>" +
+                    //utilities (used programs) information
+                    "<td>"+item.u_all+"</td>" +
+                    //(customer) satisfaction information and additional comments
+                    "<td>"+item.s_stars+"</td>" +
+                    "<td>"+item.s_comments+"</td>" +
+                    "<td class = 'contentAction'><span class='deleteBtn' onclick='deleteItem(this)' title='delete me'></span></td>";
     
     var table = document.getElementById('projects');
     table.lastChild.appendChild(row);
 }
     
+
 function deleteItem(deleteBtnNode) {
     var row = deleteBtnNode.parentNode.parentNode;
     var attribId = row.getAttribute('data-id');
@@ -79,7 +100,8 @@ function deleteItem(deleteBtnNode) {
         row.parentNode.removeChild(row);
     }
 }
-    
+  
+
 function loadItems() {
     xhrGet(REST_DATA, function(data) {
         
