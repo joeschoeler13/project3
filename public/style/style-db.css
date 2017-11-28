@@ -45,3 +45,35 @@ input[type=text], select, textarea {
         margin-top: 0;
     }
 }
+
+
+/* START: Project DB-Table */
+
+#projects {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-family: Arial;
+    text-decoration: none;
+}
+
+.listing {
+    cursor: pointer;
+}
+
+#projects th, #projects td {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+}
+
+#projects tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd; 
+}
+
+#projects tr.header, #projects tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
+}
+
+/*END: Project DB Table*/
