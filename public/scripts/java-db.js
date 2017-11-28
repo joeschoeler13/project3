@@ -68,8 +68,7 @@ function addItem(item) {
     
 function loadItems() {
     xhrGet(REST_DATA, function(data) {
-
-        //stop showing loading message
+        
         console.log(data);
         
         var receivedItems = data || [];
