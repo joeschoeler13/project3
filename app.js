@@ -117,6 +117,63 @@ app.get('/references', routes.references);
 app.get('/welcome', routes.welcome);
 app.get('/index', routes.index);
 
+function createResponseData(
+    id, 
+    name, 
+    //project information
+    p_name,
+    p_category,
+    p_start,
+    p_end,
+    p_desc,
+    //customer information
+    c_name,
+    c_industry,
+    c_adr1,
+    c_adr2,
+    c_city,
+    c_zip,
+    c_state,
+    c_country,
+    c_lat,
+    c_lng,
+    //utilities (used programs) information
+    u_all,
+    //(customer) satisfaction information and additional comments
+    s_stars,
+    s_comments) {
+ 
+    var responseData = {
+        id: id,
+        name: sanitizeInput(name),
+        p_name: sanitizeInput(p_name),
+        p_category: sanitizeInput(p_category),
+        p_start: sanitizeInput(p_start),
+        p_end: sanitizeInput(p_end),
+        p_desc: sanitizeInput(p_desc),
+        //customer information
+        c_name: sanitizeInput(c_name),
+        c_industry: sanitizeInput(c_industry),
+        c_adr1: sanitizeInput(c_adr1),
+        c_adr2: sanitizeInput(c_adr2),
+        c_city: sanitizeInput(c_city),
+        c_zip: sanitizeInput(c_zip),
+        c_state: sanitizeInput(c_state),
+        c_country: sanitizeInput(c_country),
+        c_lat: sanitizeInput(c_lat),
+        c_lng: sanitizeInput(c_lng),
+        //utilities (used programs) information
+        u_all: sanitizeInput(u_all),
+        //(customer) satisfaction information and additional comments
+        s_stars: sanitizeInput(s_stars),
+        s_comments: sanitizeInput(s_comments)
+    };
+
+    return responseData;
+}
+
+
+
 function sanitizeInput(str) {
     return String(str).replace(/&(?!amp;|lt;|gt;)/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
@@ -242,7 +299,29 @@ app.get('/api/arcs_projects_db', function(request, response) {
                             var responseData = createResponseData(
                                             doc._id,
                                             doc.name,
-                                            doc.p_name, []);
+                                            //project information
+                                            doc.p_name,
+                                            doc.p_category,
+                                            doc.p_start,
+                                            doc.p_end,
+                                            doc.p_desc,
+                                            //customer information
+                                            doc.c_name,
+                                            doc.c_industry,
+                                            doc.c_adr1,
+                                            doc.c_adr2,
+                                            doc.c_city,
+                                            doc.c_zip,
+                                            doc.c_state,
+                                            doc.c_country,
+                                            doc.c_lat,
+                                            doc.c_lng,
+                                            //utilities (used programs) information
+                                            doc.u_all,
+                                            //(customer) satisfaction information and additional comments
+                                            doc.s_stars,
+                                            doc.s_comments
+                                        );
                             projectList.push(responseData);
                             i++;
                             if (i >= len) {

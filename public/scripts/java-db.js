@@ -70,7 +70,6 @@ function loadItems() {
     xhrGet(REST_DATA, function(data) {
 
         //stop showing loading message
-        stopLoadingMessage();
         console.log(data);
         
         var receivedItems = data || [];
@@ -97,15 +96,5 @@ function loadItems() {
 }
 
 
-function showLoadingMessage() {
-    console.log("loading");
-    document.getElementById('loadingImage').innerHTML = "Loading data " + "<img height=\"100\" width=\"100\" src=\"images/loading.gif\"></img>";
-}
-
-function stopLoadingMessage() {
-    document.getElementById('loadingImage').innerHTML = "";
-}
-
-showLoadingMessage();
 //updateServiceInfo();
 loadItems();
