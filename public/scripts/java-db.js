@@ -49,22 +49,36 @@ function newproject() {
 }
 
 
-function addItem(item) {
+function addItem(item, isNew) {
     
-        var row = document.createElement('tr');
-        row.className = "tableRows";
-        var id = item && item.id;
-        if (id) {
-            row.setAttribute('data-id', id);
-        }
-
-        
-        row.innerHTML = "<td>"+item.p_name+"</td>";
-    
-        var table = document.getElementById('projects');
-        table.lastChild.appendChild(row);
-
+    var row = document.createElement('tr');
+    row.className = "tableRows";
+    var id = item && item.id;
+    if (id) {
+        row.setAttribute('data-id', id);
     }
+    
+    row.innerHTML = "<td>"+item.p_name+"</td>"+                      
+                    
+                    "<td><span class='deleteBtn' onclick='deleteItem(this)' title='delete me'></span></td>";
+    
+    var table = document.getElementById('projects');
+    table.lastChild.appendChild(row);
+}
+    
+function deleteItem(deleteBtnNode) {
+    var row = deleteBtnNode.parentNode.parentNode;
+    var attribId = row.getAttribute('data-id');
+    if (attribId) {
+        xhrDelete(REST_DATA + '?id=' + row.getAttribute('data-id'), function() {
+            row.parentNode.removeChild(row);
+        }, function(err) {
+            console.error(err);
+        });
+    } else if (attribId == null) {
+        row.parentNode.removeChild(row);
+    }
+}
     
 function loadItems() {
     xhrGet(REST_DATA, function(data) {
