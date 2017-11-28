@@ -235,16 +235,14 @@ app.get('/api/arcs_projects_db', function(request, response) {
                     });
             } else {
                 body.rows.forEach(function(document) {
-                    db2.get(document.id, {
+                    db.get(document.id, {
                         revs_info: true
                     }, function(err, doc) {
                         if (!err) {
                             var responseData = createResponseData(
-                                //
-                                doc._id,
-                                doc.name, // add others later!!
-                                doc.p_name,[]);
-                                //
+                                            doc._id,
+                                            doc.name,
+                                            doc.p_name, []);
                             projectList.push(responseData);
                             i++;
                             if (i >= len) {

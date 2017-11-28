@@ -57,9 +57,9 @@ function addItem(item) {
         if (id) {
             row.setAttribute('data-id', id);
         }
-    
 
-        row.innerHTML = "<td>"+item.name+"</td>";
+        
+        row.innerHTML = "<td>"+item.p_name+"</td>";
     
         var table = document.getElementById('projects');
         table.lastChild.appendChild(row);
