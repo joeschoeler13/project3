@@ -135,8 +135,6 @@ function createResponseData(
     c_zip,
     c_state,
     c_country,
-    c_lat,
-    c_lng,
     //utilities (used programs) information
     u_all,
     //(customer) satisfaction information and additional comments
@@ -160,8 +158,6 @@ function createResponseData(
         c_zip: sanitizeInput(c_zip),
         c_state: sanitizeInput(c_state),
         c_country: sanitizeInput(c_country),
-        c_lat: sanitizeInput(c_lat),
-        c_lng: sanitizeInput(c_lng),
         //utilities (used programs) information
         u_all: sanitizeInput(u_all),
         //(customer) satisfaction information and additional comments
@@ -205,8 +201,6 @@ app.post('/api/arcs_projects_db', function(request, response) {
     var c_zip = request.body.c_zip;
     var c_state = request.body.c_state;
     var c_country = request.body.c_country;
-    var c_lat = request.body.c_lat;
-    var c_lng = request.body.c_lng;
     //utilities (used programs) information
     var u_all = request.body.u_all;
     //(customer) satisfaction information and additional comments
@@ -238,8 +232,6 @@ app.post('/api/arcs_projects_db', function(request, response) {
         c_zip: c_zip,
         c_state: c_state,
         c_country: c_country,
-        c_lat: c_lat,
-        c_lng: c_lng,
         //utilities (used programs) information
         u_all: u_all,
         //(customer) satisfaction information and additional comments
@@ -314,8 +306,6 @@ app.get('/api/arcs_projects_db', function(request, response) {
                                             doc.c_zip,
                                             doc.c_state,
                                             doc.c_country,
-                                            doc.c_lat,
-                                            doc.c_lng,
                                             //utilities (used programs) information
                                             doc.u_all,
                                             //(customer) satisfaction information and additional comments

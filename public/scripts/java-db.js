@@ -30,8 +30,6 @@ function newproject() {
         c_zip: document.getElementById('input-c_zip').value,
         c_state: document.getElementById('input-c_state').value,
         c_country: document.getElementById('input-c_country').value,
-        c_lat: document.getElementById('input-c_lat').value,
-        c_lng: document.getElementById('input-c_lng').value,
         //utilities (used programs) information
         u_all: document.getElementById('input-u_all').value,
         //(customer) satisfaction information and additional comments
@@ -52,7 +50,7 @@ function newproject() {
 function addItem(item) {
     
     var row = document.createElement('tr');
-    row.className = "tableRows";
+    row.className = "listing";
     var id = item && item.id;
     if (id) {
         row.setAttribute('data-id', id);
@@ -73,14 +71,12 @@ function addItem(item) {
                     "<td>"+item.c_zip+"</td>" +
                     "<td>"+item.c_state+"</td>" +
                     "<td>"+item.c_country+"</td>" +
-                    "<td>"+item.c_lat+"</td>" +
-                    "<td>"+item.c_lng+"</td>" +
                     //utilities (used programs) information
                     "<td>"+item.u_all+"</td>" +
                     //(customer) satisfaction information and additional comments
                     "<td>"+item.s_stars+"</td>" +
                     "<td>"+item.s_comments+"</td>" +
-                    "<td class = 'contentAction'><span class='deleteBtn' onclick='deleteItem(this)' title='delete me'></span></td>";
+                    "<td><span class='deleteBtn' onclick='deleteItem(this)' title='delete me'></span></td>";
     
     var table = document.getElementById('projects');
     table.lastChild.appendChild(row);
@@ -121,6 +117,38 @@ function loadItems() {
         if (!hasItems) {
             items = defaultItems;
         }
+
+        // add table header
+        var tablehead = document.createElement('tr')
+        tablehead.className = "header"
+
+        tablehead.innerHTML =   //project information
+                                "<th>Project Name</th>" +
+                                "<th>Project Category</th>" +
+                                "<th>Project Start Date</th>" +
+                                "<th>Project End Date</th>" +
+                                "<th>Project Description</th>" +
+                                //customer information
+                                "<th>Customer Name</th>" +
+                                "<th>Customer Industry</th>" +
+                                "<th>Customer Adress 1</th>" +
+                                "<th>Customer Adress 2</th>" +
+                                "<th>Customer City</th>" +
+                                "<th>Customer ZIP Code</th>" +
+                                "<th>Customer State</th>" +
+                                "<th>Customer Country</th>" +
+                                //utilities (used programs) information
+                                "<th>Used Utilities for Project</th>" +
+                                //(customer) satisfaction information and additional comments
+                                "<th>Customer Satisfaction</th>" +
+                                "<th>Customer Comments</th>" +
+                                //Interactions
+                                "<th>Interactions</th>";
+
+        var table = document.getElementById('projects');
+        table.lastChild.appendChild(tablehead);
+        // end
+
         for (i = 0; i < items.length; ++i) {
             addItem(items[i]);
         }

@@ -55,6 +55,7 @@ input[type=text], select, textarea {
     border: 1px solid #ddd; /* Add a grey border */
     font-family: Arial;
     text-decoration: none;
+    overflow: auto;
 }
 
 .listing {
