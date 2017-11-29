@@ -30,7 +30,6 @@
     <body>
 
         <!-- Header same on every page -->
-        
         <%- include partials/jumbo.ejs %>
 
         <div class="navbar" id="navbar1">
@@ -47,15 +46,11 @@
         <!-- End of Header -->
 
         <!-- Start of Sidenav Social Media -->
-
         <%- include partials/sidenav.ejs %>
-
         <!-- End of Sidenav Social Media -->
 
         <!-- Start of Scroll Up Button -->
-
-        <button onclick="scrollToTop()" id="ScrollUpButton" title="Go to top">&#x25B2;</button>
-
+        <%- include partials/scroll.ejs %>
         <!-- End of Scroll Up Button -->
 
 
@@ -231,9 +226,7 @@
         <!-- End of page divider -->
 
         <!-- Start of Footer -->
-
         <%- include partials/footer.ejs %>
-        
         <!-- End of Footer -->
 
     </body>
