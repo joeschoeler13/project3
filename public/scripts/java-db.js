@@ -76,7 +76,7 @@ function addItem(item) {
                     //(customer) satisfaction information and additional comments
                     "<td>"+item.s_stars+"</td>" +
                     "<td>"+item.s_comments+"</td>" +
-                    "<td><span class='deleteBtn' onclick='deleteItem(this)' title='delete me'></span></td>";
+                    "<td><button class='deleteBtn' onclick='deleteItem(this)' title='delete me'>Delete Item!</button></td>";
     
     var table = document.getElementById('projects');
     table.lastChild.appendChild(row);
