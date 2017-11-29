@@ -131,9 +131,9 @@
                 <div class="container" id="underMap">
                     <p>
                         Because of the fact, that our work happens digitally to 99%, we can easily work for everybody all around the globe. <br>
-                        This map shows, where our customers come from. <br>
-                        You think there is one missing? - Maybe you? <br>
-                        <a href="https://arcsolutions.mybluemix.net/convinced">Then become on of our customers!</a>
+                        This map shows where we work from. <br>
+                        You think there is one person missing? - Maybe you? <br>
+                        <a href="https://arcsolutions.mybluemix.net/convinced">Then contact us!</a> We will be happy to talk to you.
                     </p>
                 </div>
             </div>
@@ -160,8 +160,10 @@
 
             <input type="text" id="searchInput" onkeyup="projectFilter()" placeholder="&#xF002; Search for project categories (e.g. Automatization)" style="font-family:Arial, FontAwesome" />
 
-            <div style="overflow-x:auto;">        
-                <table id="projects">
+            <section style="overflow-x:auto;">
+                <table id='projects-small' class='records' border='0' cellspacing='0' cellpadding='0'><tbody></tbody></table>
+            </section>
+                    <!-- 
                     <thead>
                         <tr class="header">
                             <th style="width: 20%">Project name</th>
@@ -197,7 +199,7 @@
                             <td class="ci">Education</th>
                             <td class="cl">Canada</th>
                         </tr>
-                        <!-- 
+                        
                         <tr class="listing" onclick="document.getElementById('id04').style.display='block'">
                             <td class="pn">Zeus</th>
                             <td class="pc">Dreaming</th>
@@ -206,9 +208,9 @@
                             <td class="ci">Banking</th>
                             <td class="cl">Heaven</th>
                         </tr>
-                        -->
-                    </tbody>                    
-                </table>
+                        
+                    </tbody>
+                    -->                    
             </div>
         </div>
         <!-- End of Databank -->
@@ -371,6 +373,16 @@
         </footer>
         
         <!-- End of Footer -->
+
+        <!-- Start of Scripts for Database
+            
+        <script type="text/javascript" src="/scripts/util.js">
+        </script>
+
+        <script type="text/javascript" src="/scripts/java-db.js">
+        </script>
+        
+        End of Scripts for Database -->
 
     </body>
 </html>

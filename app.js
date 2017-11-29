@@ -117,6 +117,63 @@ app.get('/references', routes.references);
 app.get('/welcome', routes.welcome);
 app.get('/index', routes.index);
 
+function createResponseData(
+    id, 
+    name, 
+    //project information
+    p_name,
+    p_category,
+    p_startm,
+    p_starty,
+    p_endm,
+    p_endy,
+    p_desc,
+    //customer information
+    c_name,
+    c_industry,
+    c_adr1,
+    c_adr2,
+    c_city,
+    c_zip,
+    c_state,
+    c_country,
+    //utilities (used programs) information
+    u_all,
+    //(customer) satisfaction information and additional comments
+    s_stars,
+    s_comments) {
+ 
+    var responseData = {
+        id: id,
+        name: sanitizeInput(name),
+        p_name: sanitizeInput(p_name),
+        p_category: sanitizeInput(p_category),
+        p_startm: sanitizeInput(p_startm),
+        p_starty: sanitizeInput(p_starty),
+        p_endm: sanitizeInput(p_endm),
+        p_endy: sanitizeInput(p_endy),
+        p_desc: sanitizeInput(p_desc),
+        //customer information
+        c_name: sanitizeInput(c_name),
+        c_industry: sanitizeInput(c_industry),
+        c_adr1: sanitizeInput(c_adr1),
+        c_adr2: sanitizeInput(c_adr2),
+        c_city: sanitizeInput(c_city),
+        c_zip: sanitizeInput(c_zip),
+        c_state: sanitizeInput(c_state),
+        c_country: sanitizeInput(c_country),
+        //utilities (used programs) information
+        u_all: sanitizeInput(u_all),
+        //(customer) satisfaction information and additional comments
+        s_stars: sanitizeInput(s_stars),
+        s_comments: sanitizeInput(s_comments)
+    };
+
+    return responseData;
+}
+
+
+
 function sanitizeInput(str) {
     return String(str).replace(/&(?!amp;|lt;|gt;)/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
@@ -136,8 +193,10 @@ app.post('/api/arcs_projects_db', function(request, response) {
     //project information
     var p_name = request.body.p_name;
     var p_category = request.body.p_category;
-    var p_start = request.body.p_start;
-    var p_end = request.body.p_end;
+    var p_startm = request.body.p_startm;
+    var p_starty = request.body.p_starty;
+    var p_endm = request.body.p_endm;
+    var p_endy = request.body.p_endy;
     var p_desc = request.body.p_desc;
     //customer information
     var c_name = request.body.c_name;
@@ -148,8 +207,6 @@ app.post('/api/arcs_projects_db', function(request, response) {
     var c_zip = request.body.c_zip;
     var c_state = request.body.c_state;
     var c_country = request.body.c_country;
-    var c_lat = request.body.c_lat;
-    var c_lng = request.body.c_lng;
     //utilities (used programs) information
     var u_all = request.body.u_all;
     //(customer) satisfaction information and additional comments
@@ -169,8 +226,10 @@ app.post('/api/arcs_projects_db', function(request, response) {
         //project information
         p_name: p_name,
         p_category: p_category,
-        p_start: p_start,
-        p_end: p_end,
+        p_startm: p_startm,
+        p_starty: p_starty,
+        p_endm: p_endm,
+        p_endy: p_endy,
         p_desc: p_desc,
         //customer information
         c_name: c_name,
@@ -181,8 +240,6 @@ app.post('/api/arcs_projects_db', function(request, response) {
         c_zip: c_zip,
         c_state: c_state,
         c_country: c_country,
-        c_lat: c_lat,
-        c_lng: c_lng,
         //utilities (used programs) information
         u_all: u_all,
         //(customer) satisfaction information and additional comments
@@ -197,6 +254,93 @@ app.post('/api/arcs_projects_db', function(request, response) {
         response.end();
     });    
 });
+
+
+app.get('/api/arcs_projects_db', function(request, response) {
+        
+    console.log("get projects");
+   
+    var projectList = [];
+    var i = 0;
+    db.list(function(err, body) {
+        if (!err) {
+            var len = body.rows.length;
+            console.log('total # of project -> ' + len);
+            if (len == 0) {
+                // push sample data
+                // save doc
+                var docName = 'simple_doc';
+                var docDesc = 'A simple Document';
+                db.insert({
+                    name: docName,
+                    value: 'A sample Document'
+                }, '', function(err, doc) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log('Document : ' + JSON.stringify(doc));
+                        var responseData = createResponseData(
+                            doc.id,
+                            docName,
+                            docDesc, []);
+                        projectList.push(responseData);
+                        response.write(JSON.stringify(projectList));
+                        console.log(JSON.stringify(projectList));
+                        console.log('ending response...');
+                        response.end();
+                    }
+                    });
+            } else {
+                body.rows.forEach(function(document) {
+                    db.get(document.id, {
+                        revs_info: true
+                    }, function(err, doc) {
+                        if (!err) {
+                            var responseData = createResponseData(
+                                            doc._id,
+                                            doc.name,
+                                            //project information
+                                            doc.p_name,
+                                            doc.p_category,
+                                            doc.p_startm,
+                                            doc.p_starty,
+                                            doc.p_endm,
+                                            doc.p_endy,
+                                            doc.p_desc,
+                                            //customer information
+                                            doc.c_name,
+                                            doc.c_industry,
+                                            doc.c_adr1,
+                                            doc.c_adr2,
+                                            doc.c_city,
+                                            doc.c_zip,
+                                            doc.c_state,
+                                            doc.c_country,
+                                            //utilities (used programs) information
+                                            doc.u_all,
+                                            //(customer) satisfaction information and additional comments
+                                            doc.s_stars,
+                                            doc.s_comments
+                                        );
+                            projectList.push(responseData);
+                            i++;
+                            if (i >= len) {
+                                response.write(JSON.stringify(projectList));
+                                console.log('ending response...');
+                                response.end();
+                            }
+                        } else {
+                            console.log(err);
+                        }
+                    });
+                });
+            }
+        } else {
+            console.log(err);
+        }
+    });        
+});
+
 
 http.createServer(app).listen(app.get('port'), '0.0.0.0', function() {
     console.log('Express server listening on port ' + app.get('port'));

@@ -2,19 +2,19 @@
 
 var locations = [
     [
-        "Concardis GmbH",
-        50.138253, 
-        8.583813
+        "Jolyn Ng",
+        1.3579427,
+        103.8450561
     ],
     [
-    	"Rameder Anhaengerkupplungen und Autoteile GmbH",
-        50.583336, 
-        11.47229
+    	"Willa Hladun",
+        -27.429215, 
+        152.921662
     ],
     [
-        "University of Victoria",
-        48.465256, 
-        -123.312910
+        "Joe Schoeler",
+        50.102188,
+        8.637714
     ]
 ]
 

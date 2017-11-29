@@ -21,12 +21,6 @@
 
         <script type="text/javascript" src="/scripts/java-all.js">
         </script>
-
-        <script type="text/javascript" src="/scripts/java-db.js">
-        </script>
-
-        <script type="text/javascript" src="/scripts/util.js">
-        </script>
         
     </head>
 
@@ -136,12 +130,20 @@
                         <input type="text" id="input-p_category" placeholder="...">
                     </div>
                     <div class="left">
-                        <label for="fname">Start-date of the project</label>
-                        <input type="text" id="input-p_start" placeholder="...">
+                        <label for="fname">Start-month of the project</label>
+                        <input type="text" id="input-p_startm" placeholder="...">
                     </div>
                     <div class="right">
-                        <label for="fname">End-date of the project</label>
-                        <input type="text" id="input-p_end" placeholder="Fill in '(ongoing)' if the project is not finished yet.">
+                        <label for="fname">Start-year of the project</label>
+                        <input type="text" id="input-p_starty" placeholder="...">
+                    </div>
+                    <div class="left">
+                        <label for="fname">End-month of the project</label>
+                        <input type="text" id="input-p_endm" placeholder="Fill in an estimated month if the project is not finished yet.">
+                    </div>
+                    <div class="right">
+                        <label for="fname">End-year of the project</label>
+                        <input type="text" id="input-p_endy" placeholder="Fill in an estimated year if the project is not finished yet.">
                     </div>
                     <div>
                         <label for="fname">Project description</label>
@@ -182,14 +184,6 @@
                         <label for="fname">Customer: country</label>
                         <input type="text" id="input-c_country" placeholder="...">
                     </div>
-                    <div class="left">
-                        <label for="fname">Customer: latitude (<a target="_blank" href="https://www.google.ca/maps/">Google for it!</a>)</label>
-                        <input type="text" id="input-c_lat" placeholder="...">
-                    </div>
-                    <div class="right">
-                        <label for="fname">Customer: longitude</label>
-                        <input type="text" id="input-c_lng" placeholder="...">
-                    </div>
                 </fieldset>
                 <fieldset>
                     <legend>Information about used Programs for this project</legend>
@@ -225,11 +219,35 @@
                 <h1>Database</h1>
             </div>
             <div>
-                <p>Database publication.</p>
+                <p>This is the database of all our Projects. Since it is very wide, you can scroll left and right to see all information.</p>
             </div>
+        	<br><br><br>
+            <section style="overflow-x:auto;">
+                <table id='projects' class='records' border='0' cellspacing='0' cellpadding='0'><tbody></tbody></table>
+            </section>
         </div>
 
         <!-- End of Database -->
+
+
+        <!-- Start of Footer -->
+
+        <footer>
+            <div class="footer text-right">
+                &copy; Copyright 2017 ARCSolutions
+            </div>
+        </footer>
+    
+        <!-- End of Footer -->
+
+
+        <!-- Start of Scripts for Database -->
+        <script type="text/javascript" src="/scripts/util.js">
+        </script>
+
+        <script type="text/javascript" src="/scripts/java-db.js">
+        </script>
+        <!-- End of Scripts for Database -->
 
 
     </body>
