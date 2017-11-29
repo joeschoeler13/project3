@@ -44,6 +44,9 @@ function newproject() {
     }, function(err) {
         console.error(err);
     });
+    
+    //automatic page refresh after adding the item to directly show it in the db
+    location.reload(true);
 }
 
 
