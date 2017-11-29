@@ -88,7 +88,7 @@ function addItem(item) {
     var table = document.getElementById('projects');
     table.lastChild.appendChild(row);
 }
-    
+
 
 function deleteItem(deleteBtnNode) {
     var row = deleteBtnNode.parentNode.parentNode;
