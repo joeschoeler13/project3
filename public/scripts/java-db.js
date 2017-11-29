@@ -18,8 +18,10 @@ function newproject() {
         //project information
         p_name: document.getElementById('input-p_name').value,
         p_category: document.getElementById('input-p_category').value,
-        p_start: document.getElementById('input-p_start').value,
-        p_end: document.getElementById('input-p_end').value,
+        p_startm: document.getElementById('input-p_startm').value,
+        p_starty: document.getElementById('input-p_starty').value,
+        p_endm: document.getElementById('input-p_endm').value,
+        p_endy: document.getElementById('input-p_endy').value,
         p_desc: document.getElementById('input-p_desc').value,
         //customer information
         c_name: document.getElementById('input-c_name').value,
@@ -62,8 +64,10 @@ function addItem(item) {
     row.innerHTML = //project information
                     "<td>"+item.p_name+"</td>" +
                     "<td>"+item.p_category+"</td>" +
-                    "<td>"+item.p_start+"</td>" +
-                    "<td>"+item.p_end+"</td>" +
+                    "<td>"+item.p_startm+"</td>" +
+                    "<td>"+item.p_starty+"</td>" +
+                    "<td>"+item.p_endm+"</td>" +
+                    "<td>"+item.p_endy+"</td>" +
                     "<td>"+item.p_desc+"</td>" +
                     //customer information
                     "<td>"+item.c_name+"</td>" +
@@ -128,8 +132,10 @@ function loadItems() {
         tablehead.innerHTML =   //project information
                                 "<th>Project Name</th>" +
                                 "<th>Project Category</th>" +
-                                "<th>Project Start Date</th>" +
-                                "<th>Project End Date</th>" +
+                                "<th>Project Start Month</th>" +
+                                "<th>Project Start Year</th>" +
+                                "<th>Project End Month</th>" +
+                                "<th>Project End Year</th>" +
                                 "<th>Project Description</th>" +
                                 //customer information
                                 "<th>Customer Name</th>" +

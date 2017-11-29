@@ -123,8 +123,10 @@ function createResponseData(
     //project information
     p_name,
     p_category,
-    p_start,
-    p_end,
+    p_startm,
+    p_starty,
+    p_endm,
+    p_endy,
     p_desc,
     //customer information
     c_name,
@@ -146,8 +148,10 @@ function createResponseData(
         name: sanitizeInput(name),
         p_name: sanitizeInput(p_name),
         p_category: sanitizeInput(p_category),
-        p_start: sanitizeInput(p_start),
-        p_end: sanitizeInput(p_end),
+        p_startm: sanitizeInput(p_startm),
+        p_starty: sanitizeInput(p_starty),
+        p_endm: sanitizeInput(p_endm),
+        p_endy: sanitizeInput(p_endy),
         p_desc: sanitizeInput(p_desc),
         //customer information
         c_name: sanitizeInput(c_name),
@@ -189,8 +193,10 @@ app.post('/api/arcs_projects_db', function(request, response) {
     //project information
     var p_name = request.body.p_name;
     var p_category = request.body.p_category;
-    var p_start = request.body.p_start;
-    var p_end = request.body.p_end;
+    var p_startm = request.body.p_startm;
+    var p_starty = request.body.p_starty;
+    var p_endm = request.body.p_endm;
+    var p_endy = request.body.p_endy;
     var p_desc = request.body.p_desc;
     //customer information
     var c_name = request.body.c_name;
@@ -220,8 +226,10 @@ app.post('/api/arcs_projects_db', function(request, response) {
         //project information
         p_name: p_name,
         p_category: p_category,
-        p_start: p_start,
-        p_end: p_end,
+        p_startm: p_startm,
+        p_starty: p_starty,
+        p_endm: p_endm,
+        p_endy: p_endy,
         p_desc: p_desc,
         //customer information
         c_name: c_name,
@@ -294,8 +302,10 @@ app.get('/api/arcs_projects_db', function(request, response) {
                                             //project information
                                             doc.p_name,
                                             doc.p_category,
-                                            doc.p_start,
-                                            doc.p_end,
+                                            doc.p_startm,
+                                            doc.p_starty,
+                                            doc.p_endm,
+                                            doc.p_endy,
                                             doc.p_desc,
                                             //customer information
                                             doc.c_name,
