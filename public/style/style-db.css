@@ -49,7 +49,7 @@ input[type=text], select, textarea {
 
 /* START: Project DB-Table */
 
-#projects {
+#projects_db {
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
     border: 1px solid #ddd; /* Add a grey border */
@@ -62,17 +62,17 @@ input[type=text], select, textarea {
     cursor: pointer;
 }
 
-#projects th, #projects td {
+#projects_db th, #projects td {
     text-align: left; /* Left-align text */
     padding: 12px; /* Add padding */
 }
 
-#projects tr {
+#projects_db tr {
     /* Add a bottom border to all table rows */
     border-bottom: 1px solid #ddd; 
 }
 
-#projects tr.header, #projects tr:hover {
+#projects_db tr.header, #projects tr:hover {
     /* Add a grey background color to the table header and on hover */
     background-color: #f1f1f1;
 }

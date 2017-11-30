@@ -50,16 +50,56 @@ for (i = 0; i < locations.length; i++) {
 
 //START: Filter project table
 
-function projectFilter() {
+function projectFilter_cat() {
     
-    var input = document.getElementById("searchInput");
+    var input = document.getElementById("searchInput_cat");
     var filter = input.value.toUpperCase();
-    var table = document.getElementById("projects");
+    var table = document.getElementById("projects_ref");
     var tr = table.getElementsByTagName("tr");
 
     // Loop through all table rows, and hide those who don't match the search query
     for (var i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+            if (td.textContent.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        } 
+    }
+}
+
+function projectFilter_ind() {
+    
+    var input = document.getElementById("searchInput_ind");
+    var filter = input.value.toUpperCase();
+    var table = document.getElementById("projects_ref");
+    var tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (var i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[3];
+        if (td) {
+            if (td.textContent.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        } 
+    }
+}
+
+function projectFilter_uti() {
+    
+    var input = document.getElementById("searchInput_uti");
+    var filter = input.value.toUpperCase();
+    var table = document.getElementById("projects_ref");
+    var tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (var i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[5];
         if (td) {
             if (td.textContent.toUpperCase().indexOf(filter) > -1) {
                 tr[i].style.display = "";

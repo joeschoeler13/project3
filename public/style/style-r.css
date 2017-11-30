@@ -12,7 +12,7 @@
 
 /* START: Project table*/
 
-#searchInput {
+#searchInput_cat, #searchInput_ind, #searchInput_uti{
     width: 100%; /* Full-width */
     font-size: 16px; /* Increase font-size */
     padding: 12px 12px 12px 12px; /* Add some padding */
@@ -20,7 +20,7 @@
     margin-bottom: 12px; /* Add some space below the input */
 }
 
-#projects {
+#projects_ref {
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
     border: 1px solid #ddd; /* Add a grey border */
@@ -32,17 +32,17 @@
     cursor: pointer;
 }
 
-#projects th, #projects td {
+#projects_ref th, #projects_ref td {
     text-align: left; /* Left-align text */
     padding: 12px; /* Add padding */
 }
 
-#projects tr {
+#projects_ref tr {
     /* Add a bottom border to all table rows */
     border-bottom: 1px solid #ddd; 
 }
 
-#projects tr.header, #projects tr:hover {
+#projects_ref tr.header, #projects_ref tr:hover {
     /* Add a grey background color to the table header and on hover */
     background-color: #f1f1f1;
 }
