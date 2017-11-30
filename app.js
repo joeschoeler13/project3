@@ -341,6 +341,33 @@ app.get('/api/arcs_projects_db', function(request, response) {
     });        
 });
 
+app.delete('/api/arcs_projects_db', function(request, response) {
+    
+        console.log("Delete Invoked..");
+        var id = request.query.id;
+        // var rev = request.query.rev; // Rev can be fetched from request. if
+        // needed, send the rev from client
+        console.log("Removing document of ID: " + id);
+        console.log('Request Query: ' + JSON.stringify(request.query));
+    
+        db.get(id, {
+            revs_info: true
+        }, function(err, doc) {
+            if (!err) {
+                db.destroy(doc._id, doc._rev, function(err, res) {
+                    // Handle response
+                    if (err) {
+                        console.log(err);
+                        response.sendStatus(500);
+                    } else {
+                        response.sendStatus(200);
+                    }
+                });
+            }
+        });
+    
+    });
+
 
 http.createServer(app).listen(app.get('port'), '0.0.0.0', function() {
     console.log('Express server listening on port ' + app.get('port'));
