@@ -157,62 +157,28 @@
                     You think you can contribute to that list? Feel free to <a href="https://joeschoeler13.github.io/project2/convinced.html">contact</a> us!<br>
                 </p>
             </div>
+        </div>
 
-            <input type="text" id="searchInput" onkeyup="projectFilter()" placeholder="&#xF002; Search for project categories (e.g. Automatization)" style="font-family:Arial, FontAwesome" />
 
-            <section style="overflow-x:auto;">
-                <table id='projects_ref' class='records' border='0' cellspacing='0' cellpadding='0'><tbody></tbody></table>
-            </section>
-                    <!-- 
-                    <thead>
-                        <tr class="header">
-                            <th style="width: 20%">Project name</th>
-                            <th style="width: 15%">Category</th>
-                            <th style="width: 20%">Programs used</th>
-                            <th style="width: 15%">Status</th>
-                            <th style="width: 15%">Customer industry</th>
-                            <th style="width: 15%">Customer location</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="listing" onclick="document.getElementById('id01').style.display='block'">
-                            <td class="pn">Thor</th>
-                            <td class="pc">Automatization</th>
-                            <td class="pu">MS Excel, <br>VBA programmatics</th>
-                            <td class="st">ongoing</th>
-                            <td class="ci">Retail</th>
-                            <td class="cl">Germany</th>
-                        </tr>
-                        <tr class="listing" onclick="document.getElementById('id02').style.display='block'">
-                            <td class="pn">Iron Man</th>
-                            <td class="pc">Automatization</th>
-                            <td class="pu">MS Excel, <br>VBA programmatics</th>
-                            <td class="st">finished</th>
-                            <td class="ci">Banking</th>
-                            <td class="cl">Germany</th>
-                        </tr>
-                        <tr class="listing" onclick="document.getElementById('id03').style.display='block'">
-                            <td class="pn">Hulk</th>
-                            <td class="pc">Web-development</th>
-                            <td class="pu">HTML, <br>JS, <br>CSS</th>
-                            <td class="st">ongoing</th>
-                            <td class="ci">Education</th>
-                            <td class="cl">Canada</th>
-                        </tr>
-                        
-                        <tr class="listing" onclick="document.getElementById('id04').style.display='block'">
-                            <td class="pn">Zeus</th>
-                            <td class="pc">Dreaming</th>
-                            <td class="pu">JavaScript</th>
-                            <td class="st">Status</th>
-                            <td class="ci">Banking</th>
-                            <td class="cl">Heaven</th>
-                        </tr>
-                        
-                    </tbody>
-                    -->                    
+        <div class="container" style="padding:0;">
+            <div class="row"></div>
+                <div class="col-sm-4">
+                    <input type="text" id="searchInput_cat" onkeyup="projectFilter_cat()" placeholder="&#xF002; Search project categories (e.g. Automatization)" style="font-family:Arial, FontAwesome" />
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" id="searchInput_ind" onkeyup="projectFilter_ind()" placeholder="&#xF002; Search customer industry (e.g. Retail)" style="font-family:Arial, FontAwesome" />
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" id="searchInput_uti" onkeyup="projectFilter_uti()" placeholder="&#xF002; Search utilities (e.g. MS Excel)" style="font-family:Arial, FontAwesome" />
+                </div>
             </div>
         </div>
+        
+            
+        <div class="container" style="overflow-x:auto;">
+            <table id='projects_ref' class='records' border='0' cellspacing='0' cellpadding='0'><tbody></tbody></table>
+        </div>
+    
         <!-- End of Databank -->
 
         <!-- Start of Modal boxes -->

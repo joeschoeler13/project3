@@ -12,7 +12,7 @@
 
 /* START: Project table*/
 
-#searchInput {
+#searchInput_cat, #searchInput_ind, #searchInput_uti{
     width: 100%; /* Full-width */
     font-size: 16px; /* Increase font-size */
     padding: 12px 12px 12px 12px; /* Add some padding */
