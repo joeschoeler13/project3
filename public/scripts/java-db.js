@@ -52,7 +52,7 @@ function newproject() {
 }
 
 
-function addItem(item) {
+function addItem_db(item) {
     
     var row = document.createElement('tr');
     row.className = "listing";
@@ -83,14 +83,14 @@ function addItem(item) {
                     //(customer) satisfaction information and additional comments
                     "<td>"+item.s_stars+"</td>" +
                     "<td>"+item.s_comments+"</td>" +
-                    "<td><button class='deleteBtn' onclick='deleteItem(this)' title='delete me'>Delete Item!</button></td>";
+                    "<td><button class='deleteBtn' onclick='deleteItem_db(this)' title='delete me'>Delete Item!</button></td>";
     
-    var table = document.getElementById('projects');
+    var table = document.getElementById('projects_db');
     table.lastChild.appendChild(row);
 }
 
 
-function deleteItem(deleteBtnNode) {
+function deleteItem_db(deleteBtnNode) {
     var row = deleteBtnNode.parentNode.parentNode;
     var attribId = row.getAttribute('data-id');
     if (attribId) {
@@ -105,7 +105,7 @@ function deleteItem(deleteBtnNode) {
 }
   
 
-function loadItems() {
+function loadItems_db() {
     xhrGet(REST_DATA, function(data) {
         
         console.log(data);
@@ -154,12 +154,12 @@ function loadItems() {
                                 //Interactions
                                 "<th>Interactions</th>";
 
-        var table = document.getElementById('projects');
+        var table = document.getElementById('projects_db');
         table.lastChild.appendChild(tablehead);
         // end
 
         for (i = 0; i < items.length; ++i) {
-            addItem(items[i]);
+            addItem_db(items[i]);
         }
 
     }, function(err) {
@@ -169,4 +169,4 @@ function loadItems() {
 
 
 //updateServiceInfo();
-loadItems();
+loadItems_db();

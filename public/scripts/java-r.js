@@ -54,7 +54,7 @@ function projectFilter() {
     
     var input = document.getElementById("searchInput");
     var filter = input.value.toUpperCase();
-    var table = document.getElementById("projects");
+    var table = document.getElementById("projects_ref");
     var tr = table.getElementsByTagName("tr");
 
     // Loop through all table rows, and hide those who don't match the search query
