@@ -28,10 +28,6 @@
     text-decoration: none;
 }
 
-.listing {
-    cursor: pointer;
-}
-
 #projects_ref th, #projects_ref td {
     text-align: left; /* Left-align text */
     padding: 12px; /* Add padding */
@@ -42,7 +38,7 @@
     border-bottom: 1px solid #ddd; 
 }
 
-#projects_ref tr.header, #projects_ref tr:hover {
+#projects_ref tr.header {
     /* Add a grey background color to the table header and on hover */
     background-color: #f1f1f1;
 }
